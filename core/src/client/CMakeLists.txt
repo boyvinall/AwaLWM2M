@@ -34,7 +34,7 @@ set (awa_client_static_INCLUDE_DIRS
 
   ######################## TODO REMOVE ########################
   # TODO: extract components common to both Core and API
-  # FIXME: API_INCLUDE_DIR is not in the cmake cache at the time this is read  
+  # FIXME: API_INCLUDE_DIR is not in the cmake cache at the time this is read
   #${API_INCLUDE_DIR}
   #${API_SRC_DIR}
   ${CORE_SRC_DIR}/../../api/src
@@ -72,6 +72,7 @@ target_include_directories (awa_static_shared PUBLIC ${awa_client_static_INCLUDE
 set_property (TARGET awa_static_shared PROPERTY POSITION_INDEPENDENT_CODE ON)
 target_link_libraries (awa_static_shared awa_common_static libb64_static libhmac_static)
 
-install (TARGETS awa_static_shared
+install (TARGETS awa_static_shared awa_static
     LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
 )

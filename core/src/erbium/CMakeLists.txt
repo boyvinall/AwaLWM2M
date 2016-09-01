@@ -67,6 +67,7 @@ set_target_properties (awa_erbiumstatic_shared PROPERTIES POSITION_INDEPENDENT_C
 target_include_directories (awa_erbiumstatic_shared PUBLIC ${awa_erbium_INCLUDE_DIRS})
 target_link_libraries (awa_erbiumstatic_shared ${awa_erbium_LIBS})
 
-install (TARGETS awa_erbiumstatic_shared
+install (TARGETS awa_erbiumstatic_shared awa_erbiumstatic
     LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
 )
